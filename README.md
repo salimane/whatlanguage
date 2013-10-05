@@ -52,6 +52,10 @@ Convenience method on String
 
     "This is a test".language   # => "English"
 
+Initialize WhatLanguage with certain languages
+
+    wl = WhatLanguage.new(:english, :german, :french)
+
 ## Requirements
 
 None, minor libraries (BloominSimple and BitField) included with this release.
@@ -64,6 +68,10 @@ To test, go into irb, then:
 
     require 'whatlanguage'
     "Je suis un homme".language
+
+## Credits
+
+Contributions from Konrad Reiche and Salimane Adjao Moustapha appreciated.
 
 ## License
 

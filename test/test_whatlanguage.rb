@@ -92,4 +92,18 @@ class TestWhatLanguage < Test::Unit::TestCase
     assert_kind_of Hash, @wl.process_text("this is a test")
   end
 
+  def test_language_selection
+    selective_wl = WhatLanguage.new(:german, :english)
+    assert_equal :german, selective_wl.language("der die das")
+  end
+
+  def test_language_selection_empty
+    selective_wl = WhatLanguage.new()
+    assert_equal :russian, selective_wl.language("Все новости в хронологическом порядке")
+  end
+
+  def test_language_selection_mixed
+    selective_wl = WhatLanguage.new(:german, :all, :english)
+    assert_equal :russian, selective_wl.language("Все новости в хронологическом порядке")
+  end
 end
